@@ -99,11 +99,6 @@ module.exports.getContestById = async (req, res, next) => {
   }
 };
 
-module.exports.downloadFile = async (req, res, next) => {
-  const file = CONSTANTS.CONTESTS_DEFAULT_DIR + req.params.fileName;
-  res.download(file);
-};
-
 module.exports.updateContest = async (req, res, next) => {
   if (req.file) {
     req.body.fileName = req.file.filename;
