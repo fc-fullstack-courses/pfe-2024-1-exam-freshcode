@@ -63,12 +63,6 @@ router.post(
   checkToken.checkAuth,
 );
 
-router.get(
-  '/downloadFile/:fileName',
-  checkToken.checkToken,
-  contestController.downloadFile,
-);
-
 router.post(
   '/updateContest',
   checkToken.checkToken,
@@ -79,7 +73,7 @@ router.post(
 router.post(
   '/setNewOffer',
   checkToken.checkToken,
-  upload.uploadLogoFiles,
+  upload.uploadLogoFile,
   basicMiddlewares.canSendOffer,
   contestController.setNewOffer,
 );
